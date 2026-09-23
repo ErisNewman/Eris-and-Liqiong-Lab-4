@@ -25,22 +25,33 @@ int main()
     cin >> price;
     cout << "Are you a member? y/n";
     cin >> member;
+//  cashier notes
+string note;
+cout << " Cashier Notes";
+cin.ignore();
+getline(cin, note);
 
     //math
     double total;
+    double total2;
     total = quantity * price;
-    //if (member == 'y') {
-        //total * 0.90 = discount;
 
-    //}
+    discount = total * 0.10;
+total2 = total - discount;
+    
+//
 
     // display
-    cout << left << setw(15) << "Item:" << name << endl;
-    cout << left << setw(15) << "Item Code:" << itemcode << endl;
-    cout << left << setw(15) << "Amount:" << quantity << endl;
-    cout << left << setw(15) << "Total:" << total << endl;
-    cout << left << setw(15) << "Membership:" << member << endl;
-    //cout << left << setw(15) << "Membership Discount:" << discount << endl;
+    cout << left << setw(24) << "Item:" << name << endl;
+    cout << left << setw(25) << "Item Code:" << itemcode << endl;
+    cout << left << setw(25) << "Amount:" << quantity << endl;
+    cout << left << setw(25)<< fixed << setprecision(2) << "Total:" << total << endl;
+    cout << left << setw(25) << "Membership:" << member << endl;
+if (member == 'y' || member == 'Y') {
+       cout << left << setw(25) << "Membership Discount:" << total2 << endl; 
+        
+    }
+cout << right << setw(25) << "Cashier Notes:" << note << endl;
 
 
 
