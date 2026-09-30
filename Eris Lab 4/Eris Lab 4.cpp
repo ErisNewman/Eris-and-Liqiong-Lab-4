@@ -156,10 +156,18 @@ getline(cin, note);
     //math
     double total;
     double total2;
+    double total3;
+    double atax;
+    double ftax;
+    double ctax;
     total = quantity * price;
-
+    atax = total * 0.065;
+    ftax = total * 0.005;
+    ctax = total * 0.02125;
     discount = total * 0.10;
 total2 = total - discount;
+total3 = total2 + atax + ftax +ctax ;
+
     
 //
 
@@ -167,15 +175,24 @@ total2 = total - discount;
     //cout << left << setw(24) << "Item:" << name << endl;
     //cout << left << setw(25) << "Item Code:" << itemcode << endl;
     cout << left << setw(25) << "Amount:" << quantity << endl;
+    
     cout << left << setw(25)<< fixed << setprecision(2) << "Total:" << total << endl;
+cout << "arkansas state tax: 6.5% " << atax<< endl;
+cout << "Faulkner County Tax: 0.5% " << ftax << endl;
+cout << "Conway Municipal Tax: 2.125% " << ctax << endl;
     cout << left << setw(25) << "Membership:" << member << endl;
 if (member == 'y' || member == 'Y') {
-       cout << left << setw(25) << "Membership Discount:" << total2 << endl; 
+       cout << left << setw(25) << "With Membership Discount:" << total2 << endl; 
         
     }
+cout << "Final Total:" << total3 << endl;
 cout << right << setw(25) << "Cashier Notes:" << note << endl;
 
 
-
+cout << setw(30) << "Tip Selection" << "Amount" << endl;
+cout << setw(30) << "A. 15%" << setw(30) << "$1.50" << endl;
+cout << setw(30) << "B. %" << setw(30) << "$1.50" << endl;
+cout << setw(30) << "A. 15%" << setw(30) << "$1.50" << endl; 
+cout << setw(30) << "A. 15%" << setw(30) << "$1.50" << endl;
 }
 
