@@ -14,15 +14,137 @@ int main()
     double price;
     char member;
     double discount;
+    char choice; 
+    char sizechoice;
+
+    // Menu
+    cout << setw(22)<<"Menu"<< endl;
+    cout << setw(35)  << "Drinks     Small (s)       Medium (m)       Large(l)" << endl;
+    cout << setw(30) << "A: Wine       3.50            6.00             9.50   " << endl;
+    cout << setw(30) << "B: Tequila    0.99            2.50             5.00" << endl;
+    cout << " Entrees" << endl;
+    cout << setw(30) << "C: Burger    5.00             7.50            12.50" << endl;
+    cout << setw(30) << "D: Moose     10.00            17.50           32.50" << endl;
+    cout << "Please Select Either Drink or Entree" << endl;
+        cin >> choice;
+        switch (choice) {
+        case 'A': 
+        case 'a' :
+            cout << "You have selected wine. Please select the size you'd like. Use S, M, or L" << endl;
+cin >> sizechoice;
+        switch (sizechoice) {
+        case 'S':
+        case 's' :
+            cout << "You have selected Small." << endl;
+            price = 3.50;
+            break;
+        case 'M':
+        case 'm':
+            cout << "You have selected Medium." << endl;
+            price = 6.00;
+            break;
+        case 'L':
+        case 'l':
+            cout << "You have selected Large." << endl;
+            price = 9.50;
+            break;
+        default: cout << " You messed up try again" << endl;
+            break;
+            
+            }
+            break;
+        case 'B' :
+        case 'b':
+            cout << "You have selected Tequila. Please select the size you'd like. Use S, M, or L" << endl;
+            cin >> sizechoice;
+            switch (sizechoice) {
+            case 'S':
+            case 's':
+                cout << "You have selected Small." << endl;
+                price = 0.99;
+                break;
+            case 'M':
+            case 'm':
+                cout << "You have selected Medium." << endl;
+                price = 2.50;
+                break;
+            case 'L':
+            case 'l':
+                cout << "You have selected Large." << endl;
+                price = 5.00;
+                break;
+
+            default: cout << " You messed up try again" << endl;
+                break;
+            }
+            break;
+        defualt: cout << "You dont need any more to drink." << endl;
+            break;
+        case 'C' :
+        case 'c' :
+            cout << "You have selected Burger, please select the size you'd like using S, M, or L" << endl;
+            cin >> sizechoice;
+            switch (sizechoice) {
+            case 'S':
+            case 's':
+                cout << "You have selected Small." << endl;
+                price = 5.00;
+                break;
+            case 'M':
+            case 'm':
+                cout << "You have selected Medium." << endl;
+                price = 7.50;
+                break;
+            case 'L':
+            case 'l':
+                cout << "You have selected Large." << endl;
+                price = 12.50;
+                break;
+
+            default: cout << " You messed up try again" << endl;
+            }
+                break;
+            case 'D':
+            case 'd' :
+                cout << "You have selected Moose, please select the size you'd like using S, M, or L" << endl;
+                cin >> sizechoice;
+                switch (sizechoice) {
+                case 'S':
+                case 's':
+                    cout << "You have selected Small." << endl;
+                    price = 10.00;
+                    break;
+                case 'M':
+                case 'm':
+                    cout << "You have selected Medium." << endl;
+                    price = 17.50;
+                    break;
+                case 'L':
+                case 'l':
+                    cout << "You have selected Large." << endl;
+                    price = 32.50;
+                    break;
+
+                default: cout << " You messed up try again" << endl;
+                    break;
+                }
+           
+
+    }
+       
+        
+    //menu
+
     //getting the response
-    cout << " Enter the name of your Food";
-    getline(cin, name);
-    cout << "Enter the item code";
-    cin >> itemcode;
+
+   // cout << " Enter the name of your Food";
+    //getline(cin, name);
+   // cout << "Enter the item code";
+    //cin >> itemcode;
     cout << "Enter the amount you want";
     cin >> quantity;
-    cout << "Enter the Unit Price";
-    cin >> price;
+   // cout << "Enter the Unit Price";
+    //cin >> price;
     cout << "Are you a member? y/n";
     cin >> member;
 //  cashier notes
@@ -42,8 +164,8 @@ total2 = total - discount;
 //
 
     // display
-    cout << left << setw(24) << "Item:" << name << endl;
-    cout << left << setw(25) << "Item Code:" << itemcode << endl;
+    //cout << left << setw(24) << "Item:" << name << endl;
+    //cout << left << setw(25) << "Item Code:" << itemcode << endl;
     cout << left << setw(25) << "Amount:" << quantity << endl;
     cout << left << setw(25)<< fixed << setprecision(2) << "Total:" << total << endl;
     cout << left << setw(25) << "Membership:" << member << endl;
@@ -56,5 +178,4 @@ cout << right << setw(25) << "Cashier Notes:" << note << endl;
 
 
 }
-
 
