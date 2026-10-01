@@ -16,7 +16,7 @@ int main()
     double discount;
     char choice; 
     char sizechoice;
-
+    char tip;
     // Menu
     cout << setw(22)<<"Menu"<< endl;
     cout << setw(35)  << "Drinks     Small (s)       Medium (m)       Large(l)" << endl;
@@ -168,9 +168,19 @@ getline(cin, note);
 total2 = total - discount;
 total3 = total2 + atax + ftax +ctax ;
 
-    
-//
 
+double tip1 = 0.15;
+double tip2 = 0.2;
+double tip3 = 0.25;
+
+
+double tipamt1 = tip1 * total;
+double tipamt2 = tip2 * total;
+double tipamt3 = tip3*total;
+
+double tiptotal1 = tipamt1 + total3;
+double tiptotal2 = tipamt2 + total3;
+double tiptotal3 = tipamt3 + total3;
     // display
     //cout << left << setw(24) << "Item:" << name << endl;
     //cout << left << setw(25) << "Item Code:" << itemcode << endl;
@@ -190,9 +200,48 @@ cout << right << setw(25) << "Cashier Notes:" << note << endl;
 
 
 cout << setw(30) << "Tip Selection" << "Amount" << endl;
-cout << setw(30) << "A. 15%" << setw(30) << "$1.50" << endl;
-cout << setw(30) << "B. %" << setw(30) << "$1.50" << endl;
-cout << setw(30) << "A. 15%" << setw(30) << "$1.50" << endl; 
-cout << setw(30) << "A. 15%" << setw(30) << "$1.50" << endl;
+cout << setw(30) << "A. 15%" << setw(30) << "$" << tipamt1 << endl;
+cout << setw(30) << "B. 20%" << setw(30) << "$" <<  tipamt2 << endl;
+cout << setw(30) << "C. 25%" << setw(30) << "$" <<tipamt3 << endl; 
+cout << setw(30) << "D. other " << endl;
+ ; 
+cin >> tip;
+switch (tip){
+    case 'A':
+    case 'a':
+        cout << " You have chosen a 15% tip" << endl;
+        cout << " Your new total is" << tiptotal1 << endl;
+        break;
+    case 'B':
+    case 'b':
+            cout << "You have chosen a 20% tip" << endl;
+            cout << " Your new total is" << tiptotal2 << endl;
+            break;
+    case 'C':
+    case 'c':
+        cout << "You have chosen a 25% tip" << endl;
+        cout << " Your new total is" << tiptotal3 << endl;
+        break;
+    case 'D':
+    case 'd':
+    
+
+double tipc;
+       cout << "Please enter the percentage amount you'd like to tip" << endl;
+       cin >> tipc;
+
+double tip4 = tipc/100;
+double tipamt4 = tip4 * total;
+double tiptotal4 = tipamt4 + total3;
+       cout << "you have tipped" << setw(1) << tipamt4 << endl;
+
+       cout << " Your new total is" << setw(1) << tiptotal4 << endl;
+       break;
+  //default: cout << " No tip" << endl;
+
 }
+
+
+}
+
 
