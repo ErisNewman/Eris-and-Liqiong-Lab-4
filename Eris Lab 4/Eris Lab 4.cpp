@@ -15,10 +15,18 @@ int main()
     char sizechoice;
     char tip;
     bool checkout = false;
-   // double total;
-
+    string order;
+    string foodname;
+    bool day = false;
+    double totalsale =0 ;
+    int customer =0 ;
     double subtotal = 0;
+
+
+  
     // Menu
+
+ do {
     cout << setw(22) << "Menu" << endl;
     cout << setw(35) << "Drinks     Small (s)       Medium (m)       Large(l)" << endl;
     cout << setw(30) << "A: Wine       3.50            6.00             9.50   " << endl;
@@ -37,6 +45,7 @@ int main()
         switch (choice) {
         case 'A':
         case 'a':
+            foodname = "Wine";
             cout << "You have selected wine. Please select the size you'd like. Use S, M, or L" << endl;
             cin >> sizechoice;
             switch (sizechoice) {
@@ -76,6 +85,7 @@ int main()
             break;
         case 'B':
         case 'b':
+            foodname = "tequila";
             cout << "You have selected Tequila. Please select the size you'd like. Use S, M, or L" << endl;
             cin >> sizechoice;
             switch (sizechoice) {
@@ -107,12 +117,13 @@ int main()
             default: cout << " You messed up try again" << endl;
                 break;
             }
-            
+
             break;
-            
-           
+
+
         case 'C':
         case 'c':
+            foodname = "burger";
             cout << "You have selected Burger, please select the size you'd like using S, M, or L" << endl;
             cin >> sizechoice;
             switch (sizechoice) {
@@ -146,6 +157,7 @@ int main()
             break;
         case 'D':
         case 'd':
+            foodname = "Moose";
             cout << "You have selected Moose, please select the size you'd like using S, M, or L" << endl;
             cin >> sizechoice;
             switch (sizechoice) {
@@ -185,16 +197,17 @@ int main()
             break;
         default: cout << "Error" << endl;
         }
+        order += foodname + "\t\t" + to_string(quantity) + "\t\t" + to_string(price) + "\t\t" + to_string(subtotal) + "\n";
 
-        
     } while (checkout == false);
-    cout << subtotal;
+
+    //cout << subtotal;
     //menu
 
 
     //ask for user's name.
-    
-        cout << "What is your name ? " << endl;
+
+    cout << "What is your name ? " << endl;
     cin >> name;
 
 
@@ -207,8 +220,8 @@ int main()
     cout << " Cashier Notes";
     cin.ignore();
     getline(cin, note);
- //math
-   
+    //math
+
     double total2;
     double total3;
     double atax;
@@ -238,9 +251,9 @@ int main()
     // display
     //cout << left << setw(24) << "Item:" << name << endl;
     //cout << left << setw(25) << "Item Code:" << itemcode << endl;
+    
+    // cout << left << setw(25) << "Amount:" << quantity << endl;
     cout << left << setw(25) << "Name: " << name << endl;
-   // cout << left << setw(25) << "Amount:" << quantity << endl;
-
     cout << left << setw(25) << fixed << setprecision(2) << "Total:" << subtotal << endl;
     cout << "arkansas state tax: 6.5% " << atax << endl;
     cout << "Faulkner County Tax: 0.5% " << ftax << endl;
@@ -294,6 +307,20 @@ int main()
         //default: cout << " No tip" << endl;
 
     }
+    int loyalty = total3 / 3;
+    string ast(loyalty, '*');
+    cout << order << endl;
+    cout << "Loyalty Points" << ast << endl;
+    customer++;
+    totalsale += total3;
+char cus;
+cout << "Is there another customer?? Y/N" << endl;
+cin >> cus;
+if (cus == 'N' || cus == 'n')
+day = true;
 
-
+} while (day == false);
+cout << "There were  " << customer << " Customers" << endl;
+cout << "There was a total of " << totalsale << " Dollars in sales today" << endl;
+    
 }
